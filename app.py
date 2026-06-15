@@ -5,7 +5,9 @@ import os
 app = Flask(__name__)
 
 # MongoDB Connection
-client = MongoClient(os.getenv("mongodb+srv://sec24am052:Fire557@calculator-cluster.lscegwp.mongodb.net/?appName=Calculator-Cluster"))
+MONGO_URI = os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
+
+client = MongoClient(MONGO_URI)
 
 db = client["calculator_db"]
 
