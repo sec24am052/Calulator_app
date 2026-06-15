@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
+import os
 
 app = Flask(__name__)
 
 # MongoDB Connection
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient(os.getenv("mongodb+srv://sec24am052:Fire557@calculator-cluster.lscegwp.mongodb.net/?appName=Calculator-Cluster"))
 
 db = client["calculator_db"]
 
